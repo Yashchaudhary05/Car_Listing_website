@@ -1,0 +1,38 @@
+Step-by-Step Guide to Set Up Dockerized Application on AWS EC2:
+
+#1. Spin up your AWS EC2 instance
+   Launch an EC2 instance on AWS using your desired OS (typically Amazon Linux or Ubuntu).
+
+#2. Update system packages
+   sudo yum update -y
+
+#3. Install Docker
+   sudo yum install docker -y
+
+#4. Start Docker service
+   sudo service docker start
+
+#5. Check Docker service status
+   sudo service docker status
+
+#6. Copy the Dockerfile into your instance
+   Use scp or any other method to transfer your Dockerfile and app files to the EC2 instance, or clone from a Git repository if applicable.
+
+#7. Build the Docker image
+   sudo docker build -t car_listing_app .
+
+#8. List Docker images
+   sudo docker images
+
+#9. Run the Docker container
+   sudo docker run -d -p 8080:4000 --name car_listing <img_id>
+   Replace <img_id> with your Docker image ID or name.
+
+#10. Check running Docker containers
+    sudo docker ps -a
+
+#11. Configure EC2 security group
+    Go to the EC2 console, under Instance Settings, select Security, and edit the inbound rules for the instance’s security group. Add a rule to allow inbound traffic on port 8080 from anywhere (0.0.0.0/0) for IPv4.
+
+#12. Access the app
+    Open your browser and go to http://<your-public-ip>:8080 to access your app.
