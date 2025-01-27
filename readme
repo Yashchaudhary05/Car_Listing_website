@@ -35,4 +35,4 @@ Step-by-Step Guide to Set Up Dockerized Application on AWS EC2:
     Go to the EC2 console, under Instance Settings, select Security, and edit the inbound rules for the instance’s security group. Add a rule to allow inbound traffic on port 8080 from anywhere (0.0.0.0/0) for IPv4.
 
 #12. Access the app
-    Open your browser and go to http://<your-public-ip>:8080 to access your app.
+    Open your browser and go to http://<your-public-ip>:8080 to access your app. {example : http://13.126.179.233:8080/}
