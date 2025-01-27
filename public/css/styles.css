@@ -1,0 +1,259 @@
+/* Common Body & Theme Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Light gradient */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dark Mode Background */
+body.dark-mode {
+    background: linear-gradient(to right, #2e3a59, #4e5368); /* Dark blue gradient */
+    color: white;
+}
+
+/* Header and Navigation */
+header {
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Purple to blue gradient */
+    color: white;
+    padding: 20px 40px;
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#dark-mode-toggle:hover {
+    color: #bbb;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+    margin-top: auto; /* This ensures the footer stays at the bottom */
+    width: 100%;
+}
+
+/* Car Card - Listing Page */
+.car-listing {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid for multiple cards */
+    gap: 20px;
+    padding: 20px;
+}
+
+.car-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.car-card p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.wheel-icon {
+    font-size: 40px;  /* Adjust the size of the wheel icon */
+    margin-right: 10px; /* Space between logo and title */
+    color: #000; /* Change the color of the wheel icon */
+}
+
+/* Hover Effects */
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Car Image Carousel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    animation: slide 15s infinite;
+}
+
+.carousel img.active {
+    animation: slide 15s infinite;
+}
+
+@keyframes slide {
+    0% {
+        left: 100%;
+    }
+    20% {
+        left: 0%;
+    }
+    60% {
+        left: 0%;
+    }
+    80% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Car Details - Cardify the page */
+.car-detail-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+}
+
+.car-detail-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.car-detail-images {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.car-detail-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Dark Mode Specific Styles */
+body.dark-mode .car-card, body.dark-mode .car-detail-section, body.dark-mode .about-card, body.dark-mode .contact-card {
+    background: #444;
+    border: 1px solid #666;
+    color: white;
+}
+
+body.dark-mode .car-card:hover, body.dark-mode .about-card:hover, body.dark-mode .contact-card:hover {
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .car-detail-title, body.dark-mode .about-card-title, body.dark-mode .contact-card-title {
+    color: white;
+}
+
+body.dark-mode .car-detail-img {
+    border: 2px solid #fff;
+}
+
+/* About and Contact Cards */
+.about-section, .contact-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+.about-card, .contact-card {
+    background: #fff;
+    padding: 30px; /* Increased padding */
+    width: 350px; /* Increased width */
+    height: 450px; /* Increased height */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.about-card:hover, .contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-card-title, .contact-card-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-card p, .contact-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Interactive Car Card Effect */
+.car-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design for Car Card */
+@media screen and (max-width: 768px) {
+    .car-listing {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Adjust for smaller screens */
+    }
+
+    .car-card {
+        height: 350px;
+    }
+
+    .about-card, .contact-card {
+        width: 280px; /* Adjusted for smaller screens */
+        height: 400px; /* Adjusted for smaller screens */
+    }
+}

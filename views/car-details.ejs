@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= car.model %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="light-mode">
+    <header>
+        <nav>
+            <div class="hamburger" id="hamburger-menu">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+            <button class="toggle" id="dark-mode-toggle">🌞</button>
+        </nav>
+    </header>
+
+    <section class="car-detail-section">
+        <h1 class="car-detail-title"><%= car.model %> - <%= car.year %></h1>
+        <div class="car-detail-images">
+            <% car.images.forEach(image => { %>
+                <img class="car-detail-img" src="<%= image %>" alt="<%= car.model %>">
+            <% }); %>
+        </div>
+
+        <p><strong>Description:</strong> <%= car.description %></p>
+        <p><strong>Price:</strong> <%= car.price %></p>
+        <p><strong>Manufacturer:</strong> <%= car.manufacturer %></p>
+        <p><strong>Engine:</strong> <%= car.engine %></p>
+        <p><strong>Horsepower:</strong> <%= car.horsepower %></p>
+        <p><strong>Top Speed:</strong> <%= car.topSpeed %></p>
+        <p><strong>0-60 mph:</strong> <%= car.acceleration %></p>
+    </section>
+
+    <footer>
+        <p>Made by: <a href="https://github.com/Yashchaudhary05" target="_blank">Yashchaudhary</a></p>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

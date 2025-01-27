@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Luxury Car Store</title>
+        <!-- Correct the favicon path -->
+        <link rel="icon" href="/images/icons8-wheel-16.png" type="image/x-icon" >
+    
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    
+<body class="light-mode">
+    <header>
+        <nav>
+            <div class="hamburger" id="hamburger-menu">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+            <button class="toggle" id="dark-mode-toggle">🌙</button>
+
+            
+
+        </nav>
+    </header>
+
+    <section class="car-listing">
+        <% cars.forEach(car => { %>
+            <a href="/car/<%= car.id %>" class="car-card-link">
+                <div class="car-card">
+                    <div class="carousel">
+                        <% car.images.forEach((image, index) => { %>
+                            <img class="carousel-img <%= index === 0 ? 'active' : '' %>" src="<%= image %>" alt="<%= car.model %>">
+                        <% }); %>
+                    </div>
+                    <p><%= car.model %></p>
+                </div>
+            </a>
+        <% }) %>
+    </section>
+
+    <footer>
+        <p>Made by: <a href="https://github.com/Yashchaudhary05" target="_blank">Yashchaudhary</a></p>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
