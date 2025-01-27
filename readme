@@ -1,7 +1,7 @@
 Step-by-Step Guide to Set Up Dockerized Application on AWS EC2:
 
 #1. Spin up your AWS EC2 instance
-   Launch an EC2 instance on AWS using your desired OS (typically Amazon Linux or Ubuntu).
+   Launch an EC2 instance on AWS using your desired OS (typically Amazon Linux or Ubuntu). { I chose amazon-linux , therfore i will use yum }
 
 #2. Update system packages
    sudo yum update -y
